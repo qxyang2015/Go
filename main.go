@@ -6,6 +6,8 @@ import (
 )
 
 func main() {
-	sort.BubbleSort([]int{1, 2, 3})
+	fmt.Println("start")
+	arr := sort.BubbleSort([]int{1, 3, 2, 5, 7, 5git })
+	fmt.Println(arr)
 	fmt.Println("done!")
 }
