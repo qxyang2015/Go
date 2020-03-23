@@ -6,15 +6,32 @@ package sort
 	从头到尾依次扫描未排序序列，将扫描到的每个元素插入有序序列的适当位置。（如果待插入的元素与有序序列中的某个元素相等，则将待插入元素插入到相等元素的后面。）
 */
 
-func InsertionSort(arr []int) []int {
-	for i := range arr {
-		preIndex := i - 1
-		current := arr[i]
-		for preIndex >= 0 && arr[preIndex] > current {
-			arr[preIndex+1] = arr[preIndex]
-			preIndex -= 1
+//插入排序
+func InsertSort(arr []int) []int {
+	if len(arr) == 0 {
+		return nil
+	}
+	for i := 1; i < len(arr); i++ {
+		for j := i; j >= 0; j-- {
+			if arr[i] < arr[j] {
+				arr[i], arr[j] = arr[j], arr[i]
+			}
 		}
-		arr[preIndex+1] = current
+	}
+	return arr
+}
+
+//逆向思想,插入排序
+func InsertSort2(arr []int) []int {
+	if len(arr) == 0 {
+		return nil
+	}
+	for i := 0; i < len(arr)-1; i++ {
+		for j := i + 1; j < len(arr); j++ {
+			if arr[i] > arr[j] {
+				arr[i], arr[j] = arr[j], arr[i]
+			}
+		}
 	}
 	return arr
 }

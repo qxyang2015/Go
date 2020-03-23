@@ -7,11 +7,14 @@ package sort
   重复第二步，直到所有元素均排序完毕。
 */
 
+//选择排序
 func SelectionSort(arr []int) []int {
-	length := len(arr)
-	for i := 0; i < length-1; i++ {
+	if len(arr) == 0 {
+		return nil
+	}
+	for i := 0; i < len(arr)-1; i++ {
 		min := i
-		for j := i + 1; j < length; j++ {
+		for j := i + 1; j < len(arr); j++ {
 			if arr[min] > arr[j] {
 				min = j
 			}

@@ -7,21 +7,28 @@ package sort
 针对所有的元素重复以上的步骤，除了最后一个。
 持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。
 */
+
+//向下冒泡，加改进
 func BubbleSort(arr []int) []int {
 	if len(arr) == 0 {
 		return nil
 	}
-	for i := 0; i < len(arr); i++ {
-		for j := i + 1; j < len(arr); j++ {
-			if arr[i] > arr[j] {
-				arr[i], arr[j] = arr[j], arr[i]
+	for i := 0; i < len(arr)-1; i++ {
+		flag := 1
+		for j := i; j < len(arr)-1; j++ {
+			if arr[j] > arr[j+1] {
+				arr[j], arr[j+1] = arr[j+1], arr[j]
+				flag = 0
 			}
+		}
+		if flag == 1 {
+			break
 		}
 	}
 	return arr
 }
 
-//冒泡排序
+//向上冒泡
 func BubbleSort2(arr []int) []int {
 	if len(arr) == 0 {
 		return nil
