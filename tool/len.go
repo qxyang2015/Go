@@ -1,10 +1,8 @@
-package main
+package tool
 
-import (
-	"fmt"
-	"reflect"
-)
+import "reflect"
 
+//支持Array、Slice、String、Map、Chan类型求取长度
 func Len(v interface{}) int {
 	typeVal := reflect.ValueOf(v)
 
@@ -15,11 +13,4 @@ func Len(v interface{}) int {
 		return -1
 	}
 	return typeVal.Len()
-}
-
-func main() {
-	fmt.Println("start")
-	//[]float32{1.2, 2.5, 36}
-	fmt.Println(Len([]string{"1", "2"}))
-	fmt.Println("done!")
 }
