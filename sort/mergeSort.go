@@ -17,7 +17,7 @@ package sort
     将另一序列剩下的所有元素直接复制到合并序列尾。
 */
 
-func mergeSort(arr []int) []int {
+func MergeSort(arr []int) []int {
 	length := len(arr)
 	if length < 2 {
 		return arr
