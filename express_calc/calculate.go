@@ -1,4 +1,4 @@
-package express_calculate
+package express_calc
 
 import (
 	"fmt"

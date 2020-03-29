@@ -2,19 +2,18 @@ package main
 
 import (
 	"fmt"
-	//"github.com/qxyang2015/Go/sort"
-	"github.com/qxyang2015/Go/tool"
+	"github.com/qxyang2015/Go/reflect.go"
+	"reflect"
 )
-
-func PrintRouter(col int, row int) []int {
-	for i := 0; i < col; i++ {
-		for j := 0; j < row; j++ {
-
-		}
-	}
-}
 
 func main() {
 	fmt.Println("start")
+	methods := &reflect_go.Methods{
+		Age: 18,
+	}
+	methods.CallMethod("say_hello")
+	methods.CallMethod("say_name", reflect.ValueOf("xiao ming"))
+	result := methods.CallMethod("get_age")
+	fmt.Println(result, len(result), result[0].Interface())
 	fmt.Println("done!")
 }
