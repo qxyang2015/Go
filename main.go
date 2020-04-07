@@ -2,18 +2,20 @@ package main
 
 import (
 	"fmt"
-	"github.com/qxyang2015/Go/reflect.go"
-	"reflect"
+	"github.com/qxyang2015/Go/struct_demo"
 )
 
+/*
+结构体函数不能实际改变结构体成员变量的值
+结构体指针函数可以改变成员变量的值
+*/
 func main() {
-	fmt.Println("start")
-	methods := &reflect_go.Methods{
-		Age: 18,
-	}
-	methods.CallMethod("say_hello")
-	methods.CallMethod("say_name", reflect.ValueOf("xiao ming"))
-	result := methods.CallMethod("get_age")
-	fmt.Println(result, len(result), result[0].Interface())
-	fmt.Println("done!")
+	//调用结构体函数设置Name
+	sd := &struct_demo.StructDemo{"初始化Name"}
+	sd.SetName()
+	fmt.Println("name = ", sd.Name)
+	//调用结构体指针函数设置Name
+	sd1 := &struct_demo.StructDemo{"初始化Name"}
+	sd1.PointSetName()
+	fmt.Println("name = ", sd1.Name)
 }
