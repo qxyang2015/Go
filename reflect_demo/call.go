@@ -1,4 +1,4 @@
-package reflect_go
+package reflect_demo
 
 import (
 	"fmt"
