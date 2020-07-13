@@ -1,12 +1,9 @@
 package main
 
-import (
-	"fmt"
-	"github.com/qxyang2015/Go/interface_demo"
-)
+import gojsonq "github.com/thedevsaddam/gojsonq"
 
 func main() {
-	fmt.Println("start")
-	interface_demo.Demo2()
-	fmt.Println("done!")
+	const json = `{"name":{"first":"Tom","last":"Hanks"},"age":61}`
+	name := gojsonq.New().FromString(json).Find("name.first")
+	println(name.(string)) // Tom
 }
