@@ -2,6 +2,7 @@ package main
 
 import gojsonq "github.com/thedevsaddam/gojsonq"
 
+//
 func main() {
 	const json = `{"name":{"first":"Tom","last":"Hanks"},"age":61}`
 	name := gojsonq.New().FromString(json).Find("name.first")
