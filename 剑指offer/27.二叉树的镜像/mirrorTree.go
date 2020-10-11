@@ -11,7 +11,7 @@ func MirrorTree(root *TreeNode) *TreeNode {
 		return root
 	}
 	root.Left, root.Right = root.Right, root.Left
-	mirrorTree(root.Left)
-	mirrorTree(root.Right)
+	MirrorTree(root.Left)
+	MirrorTree(root.Right)
 	return root
 }
