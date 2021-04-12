@@ -1,4 +1,4 @@
-package SyntaxTreeEngine
+package rule_engine
 
 import "gitlab.yixincapital.com/techmp/util/tools"
 

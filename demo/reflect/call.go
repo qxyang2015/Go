@@ -1,8 +1,8 @@
-package reflect_demo
+package reflect
 
 import (
 	"fmt"
-	"github.com/qxyang2015/Go/utils"
+	"github.com/qxyang2015/Go/tools"
 	"reflect"
 )
 
@@ -18,7 +18,7 @@ type Methods struct {
 func (methods Methods) CallMethod(name string, params ...reflect.Value) []reflect.Value {
 	methodsRef := reflect.ValueOf(methods)
 
-	methodName := utils.Camel(name)
+	methodName := tools.Camel(name)
 
 	providerMethod := methodsRef.MethodByName(methodName)
 	result := providerMethod.Call(params)
