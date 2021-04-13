@@ -14,7 +14,7 @@ type Tracker struct {
 func NewTracker() *Tracker {
 	return &Tracker{
 		ch:   make(chan string, 10),
-		stop: nil,
+		stop: make(chan struct{}),
 	}
 }
 
@@ -51,7 +51,7 @@ func main() {
 	_ = tr.Event(context.TODO(), "test")
 	_ = tr.Event(context.TODO(), "test")
 	_ = tr.Event(context.TODO(), "test")
-	ctx, cancel := context.WithTimeout(context.TODO(), 2*time.Second)
+	ctx, cancel := context.WithTimeout(context.TODO(), 10*time.Second)
 	defer cancel()
 	tr.Shutdown(ctx)
 	fmt.Println("done!")
