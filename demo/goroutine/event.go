@@ -6,6 +6,10 @@ import (
 	"time"
 )
 
+/*
+处理日志模式
+管控goroutine的生命周期
+*/
 type Tracker struct {
 	ch   chan string
 	stop chan struct{}
