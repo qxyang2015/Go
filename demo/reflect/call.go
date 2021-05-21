@@ -1,8 +1,8 @@
 package reflect
 
 import (
+	"Go/tools"
 	"fmt"
-	"github.com/qxyang2015/Go/tools"
 	"reflect"
 )
 
